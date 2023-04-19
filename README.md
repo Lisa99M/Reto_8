@@ -16,7 +16,7 @@ n = int(input("Input the number that is more than or iqual to 2"))
 if n < 2:
     print("Invalid value")
 else:
-    print("Even numbers in descending ordenr from" + str(n) + "up to 2")
+    print("Even numbers in descending order from " + str(n) + " to 2")
     for i in range(n,1, -1):
         if i%2 == 0:
             print(str(i))
@@ -33,24 +33,7 @@ for i in range (1,n+1):
     fact *= i 
     print(i,fact)   
 ```
-4. Read a natural number n and read another real data type. Calculate x^n using for loops. 
-```
-#Code:
-x: float
-n: int
-resultado:float
-x = float(input("Input value of x"))
-n = int(input("Input value of n, exponent of the power"))
-result = x
-if n == 0:
-    result = 1
-    print(str(x) + " to the power " + str(n) + " is equal to: " + str(resultado))
-elif n == 1:
-    print(str(x) + " to the power " + str(n) + " is equal to: " + str(resultado))
-for i in range(1,n):
-    resultado=resultado*x
-print(str(x) + " to the power " + str(n) + " is equal to: " + str(resultado))
-```
+4. 
 
 5. Calculate the value of 2 to the power n using for loops. 
 ```
@@ -69,14 +52,14 @@ for i in range(1,n):
     result=result*x
 print(str(x) + " to the power " + str(n) + " is equal to: " + str(result))
 ```
-6. Read a natural number n, and another real data type x. Calculate x to the n power using for loops.
+6. Read a natural number n and read another real data type. Calculate x^n using for loops. 
 ```
 #Code:
-x: int 
+x: float
 n: int
-result:int
-x = int(input("Input value of x- power base"))
-n = int(input("Input value of n- power exponent"))
+resultado:float
+x = float(input("Input value of x"))
+n = int(input("Input value of n, exponent of the power"))
 result = x
 if n == 0:
     result = 1
@@ -84,7 +67,7 @@ if n == 0:
 elif n == 1:
     print(str(x) + " to the power " + str(n) + " is equal to: " + str(result))
 for i in range(1,n):
-    resultado=resultado*x
+    result=result*x
 print(str(x) + " to the power " + str(n) + " is equal to: " + str(result))
 ```
 
@@ -132,24 +115,26 @@ def approximation_sine(x):
         summation += math.pow(-1,i)*((math.pow(x,(2*i)+1))/math.factorial((2*i)+1))
     return summation
 print("Result using created funtion:"+ str(approximation_sine(x)))
-print("Result using function imported from math:"+ str(math.sin(x))) 
+print("Result using function imported from math:"+ str(math.sin(x)))
+difference = math.atan(x) - approximation_sine(x)
+print("The difference between the actual value and the approximation is: " + str(difference))
 ```
 10. Design a function that allows calculating an approximation of the arctangent function around 0 for any value of x in the range [-1, 1], using the first n terms of the Maclaurin series. Displays the difference between the actual value and the approximation.
 ```
 #Code
 import math
 x: int
-x = int(input("Insertar valor de x en el rango [-1,1]"))
+x = int(input("Input value of x in range [-1,1]"))
 if x < -1 or x > 1:
-    print("El valor ingresado no es válido")
+    print("Invalid value")
 elif -1 <= x <= 1:
-    def funcion_arcotangente(x):
-        sumatoria = 0
+    def arctangent_function(x):
+        summation = 0
         for i in range (-1,2,1):
-            sumatoria += math.pow(-1,i)*((math.pow(x,(2*i)+1))/(2*i)+1)
-        return sumatoria
-print("Resultado con la funcion creada:"+ str(funcion_arcotangente(x)))
-print("Resultado con la funcion importada de math:"+ str(math.atan(x))) 
-diferencia = math.atan(x) - funcion_arcotangente(x)
-print("La differencia entre el valor real y la aproximación es de: " + str(diferencia))
+            summation += math.pow(-1,i)*((math.pow(x,(2*i)+1))/(2*i)+1)
+        return summation
+print("Result using created funtion:"+ str(arctangent_function(x)))
+print("Result using function imported from math:"+ str(math.atan(x))) 
+difference = math.atan(x) - arctangent_function(x)
+print("The difference between the actual value and the approximation is: " + str(difference))
 ```
