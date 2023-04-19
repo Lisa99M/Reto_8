@@ -130,9 +130,10 @@ if x < -1 or x > 1:
 elif -1 <= x <= 1:
     def arctangent_function(x):
         summation = 0
-        for i in range (-1,2,1):
-            summation += math.pow(-1,i)*((math.pow(x,(2*i)+1))/(2*i)+1)
+        for i in range (-1,2):
+            summation += math.pow(-1,i)*(math.pow(x,(2*i+1))/(2*i+1))
         return summation
+
 print("Result using created funtion:"+ str(arctangent_function(x)))
 print("Result using function imported from math:"+ str(math.atan(x))) 
 difference = math.atan(x) - arctangent_function(x)
