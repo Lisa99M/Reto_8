@@ -8,7 +8,18 @@ for i in range (1,101):
     c = i**2
     print(i, c)
 ```
-2. Print the even numbers that are less than or equal to a natural given number n ≥ 2, in descending order up to 2. 
+2. Print a list with the odd numbers from 1 up to 999, followed by another list with the even numbers from 2 up to 1000.
+```
+#Code
+for i in range (1, 1000):
+    if i%2 != 0:
+        print(i)
+for i in range (2, 1001):
+    if i%2 == 0:
+         print(i)
+ ```
+
+3. Print the even numbers that are less than or equal to a natural given number n ≥ 2, in descending order up to 2. 
 ```
 #Code:
 n: int
@@ -22,7 +33,7 @@ else:
             print(str(i))
 ```
 
-3. Print the numbers from one to a given natural number (n), each with its respective factorial.
+4. Print the numbers from one to a given natural number (n), each with its respective factorial.
 ```
 #Code:
 fact: int = 1
@@ -33,7 +44,6 @@ for i in range (1,n+1):
     fact *= i 
     print(i,fact)   
 ```
-4. 
 
 5. Calculate the value of 2 to the power n using for loops. 
 ```
