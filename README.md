@@ -1,5 +1,5 @@
 # Challenge_8
-This is a repo about loops using for. In English, so the teacher can respect me a little bit more. 
+This is a repo about loops using for. In English, so the teacher will respect me a little bit more. (I hope...)
 
 1. Print a list with the numbers from 1 to 100, each one with its respective square. 
 ```
@@ -176,3 +176,10 @@ if abs(difference) > 0.001:
 else: 
    print("The error is less than 0.1 percent with term " + str(n))
 ```
+***Chasing the ball
+
+[![OIP.jpg](https://i.postimg.cc/G2dZwtnG/OIP.jpg)](https://postimg.cc/rdZh58mw)
+
+
+***The End
+
