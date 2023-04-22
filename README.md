@@ -97,64 +97,64 @@ for n in range(1,10):
 #Code
 import math
 def exponential_function (x:float,n:int) -> float:
+    summation = 0
     for i in range (0, n):
-        summation = 0
         summation += math.pow(x, i) / math.factorial(i)
     return summation
 
 
 if __name__ == "__main__":
-  n = (int(input(" Number of the term of Maclaurin series")))
-  x = (float(input("Real value to calculate the approximation of the exponential fucntion around 0")))
+  n = (int(input("Number of the term of Maclaurin series: ")))
+  x = (float(input("Real value to calculate the approximation of the exponential fucntion around 0: ")))
   summation = exponential_function (x, n)
   
-print("Result using created funtion:"+ str(summation))
-print("Result using function imported from math:"+ str(math.exp(x))) 
+print("Result using created funtion: "+ str(summation))
+print("Result using function imported from math: "+ str(math.exp(x))) 
 difference = math.exp(x) - summation
 print("The difference between the actual value and the approximation is: " + str(difference))
 
 #For the series approximations determine at which n value less than 0.1% error is obtained.
-if abs(difference) > 0.1:
+if abs(difference) > 0.001:
     print("There are not enugh terms for an error less than 0.1 percent" + str(n))
 else: 
-   print("The error is less than 0.1 percent with term" + str(n))
+   print("The error is less than 0.1 percent with term " + str(n))
 ```
 9. Design a function that allows calculating an approximation of the sine function around 0 for any value of x (real), using the first n terms of the Maclaurin series. Displays the difference between the actual value and the approximation.
 ```
 #Code
 import math
-def approximation_sine(x:float)-> float:
+def approximation_sine(x:float,n:int)-> float:
     summation = 0
     for i in range (0,n):
         summation += math.pow(-1,i)*((math.pow(x,(2*i)+1))/math.factorial((2*i)+1))
     return summation
 
 if __name__ == "__main__":
- x = float(input("Input value of x"))
- n = int(input("Input value of the Maclaurin series term"))
- summation = approximation_sine(x)
+ x = float(input("Input value of x: "))
+ n = int(input("Input value of the Maclaurin series term: "))
+ summation = approximation_sine(x,n)
   
-print("Result using created funtion:"+ str(summation))
-print("Result using function imported from math:"+ str(math.sin(x))) 
-difference = math.atan(x) - summation
+print("Result using created funtion: "+ str(summation))
+print("Result using function imported from math: "+ str(math.sin(x))) 
+difference = math.sin(x) - summation
 print("The difference between the actual value and the approximation is: " + str(difference))
 
 #For the series approximations determine at which n value less than 0.1% error is obtained.
-if abs(difference) > 0.1:
-    print("There are not enugh terms for an error less than 0.1 percent" + str(n))
+if abs(difference) > 0.001:
+    print("There are not enugh terms for an error less than 0.1 percent " + str(n))
 else: 
-   print("The error is less than 0.1 percent with term" + str(n))
+   print("The error is less than 0.1 percent with term " + str(n))
 ```
 10. Design a function that allows calculating an approximation of the arctangent function around 0 for any value of x in the range [-1, 1], using the first n terms of the Maclaurin series. Displays the difference between the actual value and the approximation.
 ```
 #Code
 import math
 x: float
-x = float(input("Input value of x in range [-1,1]"))
+x = float(input("Input value of x in range [-1,1]: "))
 if x < -1 or x > 1:
     print("Invalid value")
 elif -1 <= x <= 1:
-    def arctangent_function(x:float) -> float:
+    def arctangent_function(x:float,n:int) -> float:
         summation = 0
         for i in range (0,n):
             summation += math.pow(-1,i)*(math.pow(x,(2*i+1))/(2*i+1))
@@ -162,17 +162,17 @@ elif -1 <= x <= 1:
 
 if __name__ == "__main__":
  x = x
- n = int(input("Input value of the Maclaurin series term"))
- summation = arctangent_function(x)
+ n = int(input("Input value of the Maclaurin series term: "))
+ summation = arctangent_function(x,n)
  
-print("Result using created funtion:"+ str(summation))
-print("Result using function imported from math:"+ str(math.atan(x))) 
+print("Result using created funtion: "+ str(summation))
+print("Result using function imported from math: "+ str(math.atan(x))) 
 difference = math.atan(x) - summation
 print("The difference between the actual value and the approximation is: " + str(difference))
 
 #For the series approximations determine at which n value less than 0.1% error is obtained.
-if abs(difference) > 0.1:
-    print("There are not enugh terms for an error less than 0.1 percent" + str(n))
+if abs(difference) > 0.001:
+    print("There are not enugh terms for an error less than 0.1 percent " + str(n))
 else: 
-   print("The error is less than 0.1 percent with term" + str(n))
+   print("The error is less than 0.1 percent with term " + str(n))
 ```
